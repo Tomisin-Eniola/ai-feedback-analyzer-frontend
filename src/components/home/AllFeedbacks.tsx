@@ -21,11 +21,10 @@ export default function AllFeedbacks({}: Props) {
   const [feedbacks, setFeedbacks] = useState<FeedbackType[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [lastPage, setLastPage] = useState(1);
-  const [total, setTotal] = useState(0);
+
   const [isLoading, setIsLoading] = useState(false);
   const [initialLoading, setInitialLoading] = useState(true);
   const observerRef = useRef<IntersectionObserver | null>(null);
-  const lastFeedbackElementRef = useRef<HTMLDivElement>(null);
 
   const fetchFeedbacks = async (page: number, isInitial = false) => {
     try {
@@ -44,7 +43,6 @@ export default function AllFeedbacks({}: Props) {
 
       setCurrentPage(data.page);
       setLastPage(data.lastPage);
-      setTotal(data.total);
     } catch (error) {
       console.error('Error fetching feedbacks:', error);
       if (isInitial) {
