@@ -1,0 +1,11 @@
+<svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="TAFA icon">
+  <defs>
+    <linearGradient id="tafaGrad" x1="8" y1="8" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2973c7"/>
+      <stop offset="1" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="10" rx="12" ry="12" width="48" height="48" fill="url(#tafaGrad)"/> 
+  <path d="M20 42 L26 36 H30 C30 39.3137 27.3137 42 24 42 H20Z" fill="url(#tafaGrad)"/>
+  <path d="M40 14.5 l2 4.5 4.5 2 -4.5 2 -2 4.5 -2-4.5 -4.5-2 4.5-2 2-4.5Z" fill="white" opacity="0.9"/>
+</svg>
