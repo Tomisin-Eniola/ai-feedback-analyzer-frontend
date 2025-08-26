@@ -10,6 +10,7 @@ import { useTransition, useState } from 'react';
 import AllFeedbacks from '../home/AllFeedbacks';
 
 import { useNavigate } from 'react-router-dom';
+import Logo from '../general/Logo';
 
 function Home() {
   const [isPending, startTransition] = useTransition();
@@ -47,7 +48,7 @@ function Home() {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-              customerFeedback: textAreaValue.trim(),
+              customerFeedback: textAreaValue.replace(/\s+/g, ' ').trim(),
               schema: schema,
             }),
           }
@@ -64,7 +65,11 @@ function Home() {
   };
 
   const getValidDynamicFields = () => {
-    return dynamicFields.filter((field) => field.trim() !== '');
+    const nonEmptyFields = dynamicFields.filter((field) => field.trim() !== '');
+    const uniqueFields = [
+      ...new Set(nonEmptyFields.map((field) => field.trim())),
+    ];
+    return uniqueFields;
   };
 
   const isFormValid = () => {
@@ -76,6 +81,10 @@ function Home() {
 
   return (
     <>
+      <header className='mb-10'>
+        <Logo />
+      </header>
+
       <div>
         <h1 className='text-xl font-semibold text-left mb-2'>
           Text for analysis

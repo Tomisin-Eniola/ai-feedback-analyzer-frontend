@@ -28,7 +28,7 @@ export default function FeedbackSummary({ feedback }: Props) {
   const selectedEntries = Object.entries(analyzed_feedback).slice(0, 3);
 
   return (
-    <Card className='w-full shadow-md h-max md:h-[320px]'>
+    <Card className='md:max-w-[400px] w-full shadow-md h-max md:h-[320px]'>
       <CardContent className='flex flex-col justify-between h-full text-sm text-left gap-4'>
         <div className='space-y-2'>
           <p>

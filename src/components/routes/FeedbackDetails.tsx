@@ -5,6 +5,8 @@ import { type FeedbackType } from '../home/AllFeedbacks';
 import PageLoader from '../general/PageLoader';
 import OriginalText from '../feedback-details/OriginalText';
 import ExtractedInformation from '../feedback-details/ExtractedInformation';
+import Logo from '../general/Logo';
+import { Link } from 'react-router-dom';
 
 type Props = {};
 
@@ -31,9 +33,19 @@ export default function FeedbackDetails({}: Props) {
   }
 
   return (
-    <section className='gap-10 flex flex-col'>
-      <OriginalText text={feedbackData.customer_feedback} />
-      <ExtractedInformation analyzedFeedback={feedbackData.analyzed_feedback} />
-    </section>
+    <>
+      <header className='mb-10'>
+        <Link to='/'>
+          <Logo />
+        </Link>
+      </header>
+
+      <section className='gap-10 flex flex-col'>
+        <OriginalText text={feedbackData.customer_feedback} />
+        <ExtractedInformation
+          analyzedFeedback={feedbackData.analyzed_feedback}
+        />
+      </section>
+    </>
   );
 }
