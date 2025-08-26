@@ -43,7 +43,7 @@
 
 @media (max-width: 600px) {
   #root {
-    width: 100%;
+    width: 96%;
     padding-inline: 0rem;
   }
 }
