@@ -2,7 +2,9 @@ import { useEffect, useState, useCallback, useRef } from 'react';
 import PageLoader from '../general/PageLoader';
 import FeedbackSummary from './FeedbackSummary';
 
-type Props = {};
+type Props = {
+  isPending: boolean;
+};
 
 export type FeedbackType = {
   id: string;
@@ -17,7 +19,7 @@ type FeedbackResponse = {
   total: number;
 };
 
-export default function AllFeedbacks({}: Props) {
+export default function AllFeedbacks({ isPending }: Props) {
   const [feedbacks, setFeedbacks] = useState<FeedbackType[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [lastPage, setLastPage] = useState(1);
@@ -84,7 +86,11 @@ export default function AllFeedbacks({}: Props) {
       <div className='grid grid-cols-[repeat(auto-fit,minmax(350px,1fr))] gap-4'>
         {feedbacks.length > 0 ? (
           feedbacks.map((feedback) => (
-            <FeedbackSummary key={feedback.id} feedback={feedback} />
+            <FeedbackSummary
+              key={feedback.id}
+              feedback={feedback}
+              isPending={isPending}
+            />
           ))
         ) : (
           <p className='text-gray-500'>No feedbacks available</p>

@@ -147,7 +147,7 @@ function Home() {
         </Button>
       )}
 
-      <AllFeedbacks />
+      <AllFeedbacks isPending={isPending} />
     </>
   );
 }

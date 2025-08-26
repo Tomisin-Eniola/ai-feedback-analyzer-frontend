@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 
 type Props = {
   feedback: FeedbackType;
+  isPending: boolean;
 };
 
 // Convert camelCase / snake_case into "Normal Text"
@@ -21,7 +22,7 @@ function truncate(text: string | null | undefined, length: number = 80) {
   return text.length > length ? text.substring(0, length) + '...' : text;
 }
 
-export default function FeedbackSummary({ feedback }: Props) {
+export default function FeedbackSummary({ feedback, isPending }: Props) {
   const { analyzed_feedback, customer_feedback } = feedback;
 
   // take the first 3 entries from analyzed_feedback
@@ -45,12 +46,18 @@ export default function FeedbackSummary({ feedback }: Props) {
           ))}
         </div>
 
-        <Link
-          to={`/feedback/${feedback.id}`}
-          className='text-blue-600 hover:underline text-sm block'
-        >
-          <Button className='w-full cursor-pointer'>View Details</Button>
-        </Link>
+        {isPending ? (
+          <Button className='w-full cursor-pointer' disabled>
+            View Details
+          </Button>
+        ) : (
+          <Link
+            to={`/feedback/${feedback.id}`}
+            className='text-blue-600 hover:underline text-sm block'
+          >
+            <Button className='w-full cursor-pointer'>View Details</Button>
+          </Link>
+        )}
       </CardContent>
     </Card>
   );
