@@ -9,7 +9,7 @@ export default function FixedSchemaField({ field }: Props) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>{field.name}</CardTitle>
+        <CardTitle className='text-gray-600'>{field.name}</CardTitle>
       </CardHeader>
     </Card>
   );

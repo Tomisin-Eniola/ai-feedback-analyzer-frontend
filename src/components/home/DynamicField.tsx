@@ -15,6 +15,7 @@ export default function DynamicField({ value, onChange, onRemove }: Props) {
         placeholder=''
         value={value}
         onChange={(e) => onChange(e.target.value)}
+        className='text-gray-500'
       />
       <div
         className='flex justify-center items-center bg-red-600 w-8 h-8 rounded'

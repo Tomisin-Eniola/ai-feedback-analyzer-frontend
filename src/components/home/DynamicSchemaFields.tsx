@@ -33,7 +33,7 @@ export default function DynamicSchemaFields({
 
   return (
     <Card className='my-10'>
-      <CardTitle className='px-6 text-xl font-semibold text-left'>
+      <CardTitle className='px-6 text-xl font-semibold text-left text-gray-600'>
         Custom Fields
       </CardTitle>
       <CardContent className='px-6'>

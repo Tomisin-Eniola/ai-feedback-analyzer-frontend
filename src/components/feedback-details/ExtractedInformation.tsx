@@ -17,7 +17,7 @@ export default function ExtractedInformation({ analyzedFeedback }: Props) {
 
   return (
     <Card>
-      <CardTitle className='px-6 py-4 text-xl font-semibold text-left'>
+      <CardTitle className='px-6 py-4 text-xl font-semibold text-left text-gray-600'>
         Extracted Information
       </CardTitle>
       <CardContent className='p-0'>
@@ -25,10 +25,10 @@ export default function ExtractedInformation({ analyzedFeedback }: Props) {
           <table className='w-full table-fixed'>
             <thead>
               <tr className='border-b bg-gray-50'>
-                <th className='px-6 py-3 text-left text-sm font-medium text-gray-900 w-1/3'>
+                <th className='px-6 py-3 text-left text-sm font-medium text-gray-600 w-1/3'>
                   Field
                 </th>
-                <th className='px-6 py-3 text-left text-sm font-medium text-gray-900 w-2/3'>
+                <th className='px-6 py-3 text-left text-sm font-medium text-gray-600 w-2/3'>
                   Value
                 </th>
               </tr>
@@ -39,10 +39,10 @@ export default function ExtractedInformation({ analyzedFeedback }: Props) {
                   key={key}
                   className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}
                 >
-                  <td className='px-6 py-4 text-sm font-medium text-gray-900 align-top w-1/3 text-left'>
+                  <td className='px-6 py-4 text-sm font-medium text-gray-600 align-top w-1/3 text-left'>
                     {formatKey(key)}
                   </td>
-                  <td className='px-6 py-4 text-sm text-gray-700 whitespace-pre-wrap break-words w-2/3 text-left'>
+                  <td className='px-6 py-4 text-sm text-gray-500 whitespace-pre-wrap break-words w-2/3 text-left'>
                     {value !== null && value !== undefined
                       ? String(value)
                       : 'Not available'}

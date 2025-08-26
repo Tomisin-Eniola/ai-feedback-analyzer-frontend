@@ -32,15 +32,19 @@ export default function FeedbackSummary({ feedback, isPending }: Props) {
     <Card className='md:max-w-[400px] w-full shadow-md h-max md:h-[320px]'>
       <CardContent className='flex flex-col justify-between h-full text-sm text-left gap-4'>
         <div className='space-y-2'>
-          <p>
-            <span className='font-medium'>Customer Feedback: </span>
+          <p className='text-gray-500'>
+            <span className='font-medium text-gray-600'>
+              Customer Feedback:{' '}
+            </span>
             {truncate(customer_feedback, 120)}
           </p>
 
           {/* First 3 key-value pairs */}
           {selectedEntries.map(([key, value]) => (
-            <p key={key}>
-              <span className='font-medium'>{formatKey(key)}: </span>
+            <p key={key} className='text-gray-500'>
+              <span className='font-medium text-gray-600'>
+                {formatKey(key)}:{' '}
+              </span>
               {truncate(value ? String(value) : null, 80)}
             </p>
           ))}

@@ -93,9 +93,10 @@ function Home() {
           placeholder='Paste your text here for extraction...'
           value={textAreaValue}
           onChange={(e) => setTextAreaValue(e.target.value)}
+          className='text-gray-500 placeholder-gray-500'
         />
         {textAreaValue.length > 0 && textAreaValue.length < MIN_TEXT_LENGTH && (
-          <p className='text-sm text-red-600 mt-1 text-left'>
+          <p className='text-sm text-red-300 mt-1 text-left'>
             Please enter at least {MIN_TEXT_LENGTH} characters.
           </p>
         )}
@@ -113,11 +114,15 @@ function Home() {
         >
           <div className='flex items-center space-x-2'>
             <RadioGroupItem value='option-one' id='option-one' />
-            <Label htmlFor='option-one'>Customer Feedback</Label>
+            <Label htmlFor='option-one' className='text-gray-500'>
+              Customer Feedback
+            </Label>
           </div>
           <div className='flex items-center space-x-2'>
             <RadioGroupItem value='option-two' id='option-two' />
-            <Label htmlFor='option-two'>Custom Fields</Label>
+            <Label htmlFor='option-two' className='text-gray-500'>
+              Custom Fields
+            </Label>
           </div>
         </RadioGroup>
       </div>
